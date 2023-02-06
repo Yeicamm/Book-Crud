@@ -1,5 +1,7 @@
 package com.example.obrestdatajpa.entities;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.apache.tomcat.jni.Local;
 
 import javax.persistence.*;
@@ -7,15 +9,18 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "books")
+@ApiModel("Entidad libro para representar un elemento didactico po laminas de celulosa cacerada en Puerto RIco ")
 public class Book {
 
     //atribustos
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ApiModelProperty("Clave ficticia autoincremental tipo Long")
     private Long id;
     private String title;
     private String author;
     private Integer pages;
+    @ApiModelProperty("Precio en rupias, con dos decimales utilizzando . como separador")
     private Double price;
     private LocalDate releaseDate;
     private Boolean online;
